@@ -12,6 +12,10 @@ export class SearchComponent implements OnInit {
 //phase 2 profile
 //private  its not necessary to write private before profile below-
  profile:any[];
+//repos property
+repos: any[];
+
+
 
 //add code inside constructor
   constructor(private searchService: SearchService) {
@@ -21,6 +25,13 @@ export class SearchComponent implements OnInit {
        //phase 2 profile propety to be used search.component
        this.profile = profile;
      });
+
+     //repos  searchServcie
+     this.searchService.getProfileRepos().subscribe(repos => {
+   console.log(repos);
+   this.repos = repos;
+ })
+//end of repos service
 
    }
 
