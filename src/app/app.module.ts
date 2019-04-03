@@ -1,18 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
+
+//import the http NgModule
+import { HttpModule } from '@angular/http';
+
+//import the search SearchService with the code below
+import { SearchService } from './services/search.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [SearchService],//copied SearchService here to make it avalable throughout the app
   bootstrap: [AppComponent]
 })
 export class AppModule { }
