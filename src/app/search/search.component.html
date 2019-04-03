@@ -1,3 +1,11 @@
-<p>
-  search works!
-</p>
+<!--this div will only b shown if the profile exists hence we use ngif-->
+
+<div *ngIf="profile">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			{{profile.name}} <small>({{profile.login}})</small>
+			<span *ngIf="profile.company">, Works at {{profile.company}}</span>
+			{{profile.location}}
+		</div>
+	</div>
+</div>
