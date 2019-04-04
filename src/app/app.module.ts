@@ -5,6 +5,9 @@ import { NgModule } from '@angular/core';
 //import the http NgModule
 import { HttpModule } from '@angular/http';
 
+//adding the ngmodel issue
+import { FormsModule } from '@angular/forms';
+
 //import the search SearchService with the code below
 import { SearchService } from './services/search.service';
 
@@ -20,7 +23,8 @@ import { SearchComponent } from './search/search.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [SearchService],//copied SearchService here to make it avalable throughout the app
   bootstrap: [AppComponent]

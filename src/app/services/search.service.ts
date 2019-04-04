@@ -20,7 +20,6 @@ export class SearchService {
   private clientsecret ='21ae41656595ef9e5b84cf04c53238d8c4aaabf7';
 
   constructor(private http:Http) {
-
     //add a message to console to check if service is running
     console.log("service is now ready!");
     this.username = 'mikewanya';
@@ -37,6 +36,12 @@ export class SearchService {
     // tslint:disable-next-line:max-line-length
     return this.http.get('https://api.github.com/users/' + this.username + '/repos?client_id=' + this.clientid + '&client_secret=' + this.clientsecret)
       .pipe(map(res => res.json()));
+  }
+
+  //the code below is for username
+
+  updateProfile(username:string){
+  	this.username = username;
   }
 
 }

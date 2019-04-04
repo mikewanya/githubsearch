@@ -2,8 +2,15 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
   crossorigin="anonymous">
 
-<!--this div will only b shown if the profile exists hence we use ngif-->
+<!--the form below enables us to search github -->
+<form action="" class="search-form">
+	<div class="form-group">
+		<input type="text" class="form-control" placeholder="Enter GitHub username to begin search" [(ngModel)]="username" name="username" (keyup)="findProfile()">
+	</div>
+</form>
+<!--end of form -->
 
+<!--this div below will only b shown if the profile exists hence we use ngif-->
 <div *ngIf="profile">
 	<div class="panel panel-default">
 		<div class="panel-heading">
