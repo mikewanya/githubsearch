@@ -37,8 +37,6 @@ repos: any[];
 
    }
 
-
-
    //below code is used for the form search
   findProfile() {
     this.searchService.updateProfile(this.username);
